@@ -1,4 +1,5 @@
 import React from 'react';
+import './FormValidator.css';
 
 class FormValidator extends React.Component {
   constructor(props) {
