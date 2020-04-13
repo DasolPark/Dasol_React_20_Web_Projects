@@ -1,32 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
-
-:root {
-  --success-color: #2ecc71;
-  --error-color: #e74c3c;
-  --outline-color: #5ea9fe;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #f9fafb;
-  font-family: 'Noto Sans KR';
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  margin: 0;
-}
-
-input,
-button,
-::placeholder {
-  font-family: 'Noto Sans KR';
-}
-
-.container {
+.form-validator__container {
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
@@ -43,8 +15,8 @@ h2 {
 }
 
 .form-control {
-  margin-bottom: 10px;
   padding-bottom: 20px;
+  margin-bottom: 10px;
   position: relative;
 }
 
@@ -71,11 +43,11 @@ h2 {
 }
 
 .form-control.success input {
-  border: 2px solid var(--success-color);
+  border-color: var(--success-color);
 }
 
 .form-control.error input {
-  border: 2px solid var(--error-color);
+  border-color: var(--error-color);
 }
 
 .form-control small {
@@ -92,8 +64,8 @@ h2 {
 
 .form button {
   cursor: pointer;
-  background-color: #3498db;
-  border: 2px solid #3498db;
+  background-color: var(--submitBtn-color);
+  border: 2px solid var(--submitBtn-color);
   border-radius: 4px;
   color: #fff;
   display: block;

@@ -1,5 +1,5 @@
 import React from 'react';
-import FormValidator from './FormValidator';
+import FormValidator from './components/FormValidator';
 
 const App = () => {
   return (
