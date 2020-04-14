@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css';
+import './FormValidator.css';
 
 export default class FormValidator extends React.Component {
   constructor(props) {
@@ -128,62 +128,65 @@ export default class FormValidator extends React.Component {
 
   render() {
     return (
-      <div className="form-validator__container">
-        <form className="form" id="form" onSubmit={this.onFormSubmit}>
-          <h2>회원 가입</h2>
-          <div className="form-control">
-            <label htmlFor="username">성/이름</label>
-            <input
-              type="text"
-              id="username"
-              value={this.state.username}
-              onChange={(e) =>
-                this.setState({ username: e.target.value.toLowerCase() })
-              }
-              onBlur={this.onInputBlurForValid}
-              placeholder="홍길동"
-              autoComplete="off"
-            />
-            <small>Error Message</small>
-          </div>
-          <div className="form-control">
-            <label htmlFor="email">이메일</label>
-            <input
-              type="text"
-              id="email"
-              value={this.state.email}
-              onChange={(e) => this.setState({ email: e.target.value })}
-              onBlur={this.onInputBlurForValid}
-              placeholder="이메일"
-              autoComplete="off"
-            />
-            <small>Error Message</small>
-          </div>
-          <div className="form-control">
-            <label htmlFor="username">비밀번호(최소 6자)</label>
-            <input
-              type="password"
-              id="password"
-              onChange={(e) => this.setState({ password: e.target.value })}
-              onBlur={this.onInputBlurForValid}
-              placeholder="비밀번호"
-            />
-            <small>Error Message</small>
-          </div>
-          <div className="form-control">
-            <label htmlFor="username">비밀번호 확인</label>
-            <input
-              ref={this.password2}
-              type="password"
-              id="password2"
-              onChange={(e) => this.setState({ password2: e.target.value })}
-              onBlur={this.onInputBlurForValid}
-              placeholder="비밀번호 확인"
-            />
-            <small>Error Message</small>
-          </div>
-          <button type="submit">회원 가입 신청</button>
-        </form>
+      <div className="form-validator__wrapper">
+        <div className="form-validator__container">
+          <form className="form" id="form" onSubmit={this.onFormSubmit}>
+            <h2>회원 가입</h2>
+            <div className="form-control">
+              <label htmlFor="username">성/이름</label>
+              <input
+                type="text"
+                id="username"
+                value={this.state.username}
+                onChange={(e) =>
+                  this.setState({ username: e.target.value.toLowerCase() })
+                }
+                onBlur={this.onInputBlurForValid}
+                placeholder="홍길동"
+                autoComplete="off"
+              />
+              <small>Error Message</small>
+            </div>
+            <div className="form-control">
+              <label htmlFor="email">이메일</label>
+              <input
+                type="text"
+                id="email"
+                value={this.state.email}
+                onChange={(e) => this.setState({ email: e.target.value })}
+                onBlur={this.onInputBlurForValid}
+                placeholder="이메일"
+                autoComplete="off"
+              />
+              <small>Error Message</small>
+            </div>
+            <div className="form-control">
+              <label htmlFor="username">비밀번호(최소 6자)</label>
+              <input
+                type="password"
+                id="password"
+                onChange={(e) => this.setState({ password: e.target.value })}
+                onBlur={this.onInputBlurForValid}
+                placeholder="비밀번호"
+              />
+              <small>Error Message</small>
+            </div>
+            <div className="form-control">
+              <label htmlFor="username">비밀번호 확인</label>
+              <input
+                ref={this.password2}
+                type="password"
+                id="password2"
+                onChange={(e) => this.setState({ password2: e.target.value })}
+                onBlur={this.onInputBlurForValid}
+                placeholder="비밀번호 확인"
+              />
+              <small>Error Message</small>
+            </div>
+            <button type="submit">회원 가입 신청</button>
+          </form>
+        </div>
+
       </div>
     );
   }
