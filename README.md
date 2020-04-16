@@ -1,7 +1,7 @@
-# Momentum Clone
+# 20 Web Projects With React.js
 
 - URL: 👉
-- ReactJS
+- React.js
 
 # Gloals
 
