@@ -36,9 +36,9 @@ const Home = () => {
         <div>
           <img src={FormValidator} alt="Form-validator"></img>
           <div className="content">
-            <h4>Form Validation</h4>
+            <h4>Custom Video Player</h4>
             <p>Using DOM & Events</p>
-            <Link className="btn btn-primary" to={{ pathname: '/form-validator' }}>
+            <Link className="btn btn-primary" to={{ pathname: '/custom-video-player' }} target="_blank">
               Go to project
             </Link>
           </div>
