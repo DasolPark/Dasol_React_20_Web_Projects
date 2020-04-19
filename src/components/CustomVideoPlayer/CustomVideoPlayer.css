@@ -37,6 +37,7 @@
   background-color: var(--custom-video-player-bg-screen-color) !important;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  cursor: pointer;
 }
 
 .custom-video-player__controls {
@@ -54,22 +55,23 @@
   background: transparent;
   border: 0;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .custom-video-player__controls button:focus {
   outline: 0;
 }
 
-.custom-video-player__play {
+.custom-video-player__play .fa-play {
   color: var(--custom-video-player-play-btn-color);
 }
 
-.custom-video-player__stop {
-  color: var(--custom-video-player-stop-btn-color);
+.custom-video-player__play .fa-pause {
+  color: var(--custom-video-player-pause-btn-color);
 }
 
-.custom-video-player__pause {
-  color: var(--custom-video-player-pause-btn-color);
+.custom-video-player__stop .fa-stop {
+  color: var(--custom-video-player-stop-btn-color);
 }
 
 .custom-video-player__timestamp {
