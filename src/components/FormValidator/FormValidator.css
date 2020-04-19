@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
 
 :root {
-  --success-color: #2ecc71;
-  --error-color: #e74c3c;
-  --outline-color: #5ea9fe;
-  --submitBtn-color: #3498db;
+  --form-validator-success-color: #2ecc71;
+  --form-validator-error-color: #e74c3c;
+  --form-validator-outline-color: #5ea9fe;
+  --form-validator-submitBtn-color: #3498db;
 }
 
-input,
-button,
-::placeholder {
+.form-validator__wrapper input,
+.form-validator__wrapper button,
+.form-validator__wrapper ::placeholder {
   font-family: 'Noto Sans KR';
 }
 
@@ -30,22 +30,22 @@ button,
   width: 350px;
 }
 
-.form {
+.form-validator__form {
   padding: 30px 40px;
 }
 
-h2 {
+.form-validator__container form h2 {
   text-align: center;
   margin: 0 0 20px;
 }
 
-.form-control {
+.form-validator__form-control {
   padding-bottom: 20px;
   margin-bottom: 10px;
   position: relative;
 }
 
-.form-control label {
+.form-validator__form-control label {
   color: #777;
   display: block;
   margin-bottom: 5px;
@@ -53,7 +53,7 @@ h2 {
   font-weight: 600;
 }
 
-.form-control input {
+.form-validator__form-control input {
   display: block;
   width: 100%;
   padding: 10px;
@@ -62,35 +62,35 @@ h2 {
   border: 2px solid #f0f0f0;
 }
 
-.form-control input:focus {
+.form-validator__form-control input:focus {
   outline: 0;
-  border-color: var(--outline-color);
+  border-color: var(--form-validator-outline-color);
 }
 
-.form-control.success input {
-  border-color: var(--success-color);
+.form-validator__form-control.success input {
+  border-color: var(--form-validator-success-color);
 }
 
-.form-control.error input {
-  border-color: var(--error-color);
+.form-validator__form-control.error input {
+  border-color: var(--form-validator-error-color);
 }
 
-.form-control small {
-  color: var(--error-color);
+.form-validator__form-control small {
+  color: var(--form-validator-error-color);
   position: absolute;
   left: 0;
   bottom: 0;
   visibility: hidden;
 }
 
-.form-control.error small {
+.form-validator__form-control.error small {
   visibility: visible;
 }
 
-.form button {
+.form-validator__form button {
   cursor: pointer;
-  background-color: var(--submitBtn-color);
-  border: 2px solid var(--submitBtn-color);
+  background-color: var(--form-validator-submitBtn-color);
+  border: 2px solid var(--form-validator-submitBtn-color);
   border-radius: 4px;
   color: #fff;
   display: block;
@@ -100,6 +100,6 @@ h2 {
   margin-top: 20px;
 }
 
-.form button:active {
+.form-validator__form button:active {
   transform: scale(0.98);
 }

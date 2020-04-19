@@ -37,7 +37,7 @@ export default class FormValidator extends React.Component {
 
   showError = (input, message) => {
     const formControl = input.parentElement;
-    formControl.className = 'form-control error';
+    formControl.className = 'form-validator__form-control error';
 
     const small = formControl.lastChild;
     small.innerText = message;
@@ -45,7 +45,7 @@ export default class FormValidator extends React.Component {
 
   showSuccess = (input) => {
     const formControl = input.parentElement;
-    formControl.className = 'form-control success';
+    formControl.className = 'form-validator__form-control success';
   };
 
   getFieldName = (input) => {
@@ -130,9 +130,9 @@ export default class FormValidator extends React.Component {
     return (
       <div className="form-validator__wrapper">
         <div className="form-validator__container">
-          <form className="form" id="form" onSubmit={this.onFormSubmit}>
+          <form className="form-validator__form" id="form" onSubmit={this.onFormSubmit}>
             <h2>회원 가입</h2>
-            <div className="form-control">
+            <div className="form-validator__form-control">
               <label htmlFor="username">성/이름</label>
               <input
                 type="text"
@@ -147,7 +147,7 @@ export default class FormValidator extends React.Component {
               />
               <small>Error Message</small>
             </div>
-            <div className="form-control">
+            <div className="form-validator__form-control">
               <label htmlFor="email">이메일</label>
               <input
                 type="text"
@@ -160,7 +160,7 @@ export default class FormValidator extends React.Component {
               />
               <small>Error Message</small>
             </div>
-            <div className="form-control">
+            <div className="form-validator__form-control">
               <label htmlFor="username">비밀번호(최소 6자)</label>
               <input
                 type="password"
@@ -171,7 +171,7 @@ export default class FormValidator extends React.Component {
               />
               <small>Error Message</small>
             </div>
-            <div className="form-control">
+            <div className="form-validator__form-control">
               <label htmlFor="username">비밀번호 확인</label>
               <input
                 ref={this.password2}
