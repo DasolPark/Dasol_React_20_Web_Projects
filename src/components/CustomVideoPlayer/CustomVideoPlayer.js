@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './CustomVideoPlayerProgress.css';
-import './CustomVideoPlayer.css';
+import './CustomVideoPlayer.scss';
 
 import videoGone from './videos/gone.mp4';
 import gonePoster from './img/gonePoster.png';
@@ -79,6 +79,23 @@ export default class CustomVideoPlayer extends React.Component {
     this.video.current.currentTime = (this.progress.current.value * this.video.current.duration) / 100;
   }
 
+  onExpandClick = () => {
+    console.dir(this.video.current);
+    if (this.video.current.requestFullscreen) {
+      this.video.current.requestFullscreen();
+    } else if (this.video.current.mozRequestFullScreen) {
+      this.video.current.mozRequestFullScreen();
+    } else if (this.video.current.webkitRequestFullscreen) {
+      this.video.current.webkitRequestFullscreen();
+    } else if (this.video.current.msRequestFullscreen) {
+      this.video.current.msRequestFullscreen();
+    }
+  }
+
+  onVolumeChange = (e) => {
+    this.video.current.volume = e.target.value;
+  }
+
   render() {
     return (
       <div className="custom-video-player__wrapper">
@@ -86,9 +103,11 @@ export default class CustomVideoPlayer extends React.Component {
           <h1>Custom Video Player</h1>
           <video ref={this.video} className="custom-video-player__screen" src={videoGone} poster={gonePoster} onClick={this.onVideoStatusToggle} onTimeUpdate={this.onVideoTimeUpdate} />
           <div className="custom-video-player__controls">
+            <input type="range" className="custom-video-player__volume" min="0" max="1" step="0.1" defaultValue="0.5" onChange={this.onVolumeChange} />
             <button ref={this.play} className="custom-video-player__play" onClick={this.onVideoStatusToggle}><i className="fa fa-play fa-2x"></i></button>
             <button className="custom-video-player__stop" onClick={this.onStopBtnClick}><i className="fa fa-stop fa-2x"></i></button>
             <input ref={this.progress} type="range" className="progress" min="0" max="100" step="0.1" defaultValue="0" onChange={this.onProgressChange} />
+            <span className="custom-video-player__expand" onClick={this.onExpandClick}><i className="fas fa-expand"></i></span>
             <span ref={this.timestamp} className="custom-video-player__timestamp">00:00:00</span>
           </div>
         </div>
