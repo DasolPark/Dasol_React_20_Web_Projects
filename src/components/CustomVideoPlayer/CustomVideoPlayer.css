@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+:root {
+  --custom-video-player-bg-color: #666;
+  --custom-video-player-bg-screen-color: #000;
+  --custom-video-player-bg-ctl-color: #333;
+  --custom-video-player-play-btn-color: #28a745;
+  --custom-video-player-stop-btn-color: #dc3545;
+  --custom-video-player-pause-btn-color: #fff;
+}
+
+.custom-video-player__wrapper {
+  background-color: var(--custom-video-player-bg-color);
+  color: #fff;
+  font-family: 'Questrial', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.custom-video-player__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.custom-video-player__container h1 {
+  margin-bottom: 20px;
+}
+
+.custom-video-player__screen {
+  width: 60%;
+  background-color: var(--custom-video-player-bg-screen-color) !important;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.custom-video-player__controls {
+  width: 60%;
+  background-color: var(--custom-video-player-bg-ctl-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.custom-video-player__controls button {
+  background: transparent;
+  border: 0;
+  margin-right: 10px;
+}
+
+.custom-video-player__controls button:focus {
+  outline: 0;
+}
+
+.custom-video-player__play {
+  color: var(--custom-video-player-play-btn-color);
+}
+
+.custom-video-player__stop {
+  color: var(--custom-video-player-stop-btn-color);
+}
+
+.custom-video-player__pause {
+  color: var(--custom-video-player-pause-btn-color);
+}
+
+.custom-video-player__timestamp {
+  font-weight: bold;
+  margin-left: 10px;
+}
