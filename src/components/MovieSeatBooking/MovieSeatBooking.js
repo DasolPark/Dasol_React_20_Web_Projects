@@ -1,33 +1,81 @@
 import React from 'react';
 
-import './MovieSeatBooking.css';
+import './MovieSeatBooking.scss';
 import MovieSeat from './MovieSeat';
 
-export default class MovieSeatBooking extends React.Component {
-  // See you later
+const defaultSeatStatus = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]];
+const marrige = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 1, 1, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1, 1], [0, 0, 1, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 1, 0, 0], [1, 0, 0, 0, 0, 0, 0, 0]];
+const testMovieData = [
+  {
+    screenId: 0,
+    ticketPrice: 12000,
+    seatStatus: (JSON.parse(localStorage.getItem(`selectedSeat`)) !== null) ? JSON.parse(localStorage.getItem(`selectedSeat`)) : defaultSeatStatus,
+    titleKor: '기생충',
+    titleEng: 'Parasite',
+  },
+  {
+    screenId: 1,
+    ticketPrice: 10000,
+    // seatStatus: JSON.parse(localStorage.getItem(`selectedSeat`)) !== null && JSON.parse(localStorage.getItem(`selectedSeat`)).length > 0 ? JSON.parse(localStorage.getItem(`selectedSeat`)) : defaultSeatStatus,
+    seatStatus: marrige,
+    titleKor: '결혼 이야기',
+    titleEng: 'Marrige Story',
+  },
+  {
+    screenId: 2,
+    ticketPrice: 9000,
+    seatStatus: JSON.parse(localStorage.getItem(`selectedSeat`)) !== null && JSON.parse(localStorage.getItem(`selectedSeat`)).length > 0 ? JSON.parse(localStorage.getItem(`selectedSeat`)) : defaultSeatStatus,
+    titleKor: '1917',
+    titleEng: '1917',
+  },
+  {
+    screenId: 3,
+    ticketPrice: 7000,
+    seatStatus: JSON.parse(localStorage.getItem(`selectedSeat`)) !== null && JSON.parse(localStorage.getItem(`selectedSeat`)).length > 0 ? JSON.parse(localStorage.getItem(`selectedSeat`)) : defaultSeatStatus,
+    titleKor: '조커',
+    titleEng: 'Joker',
+  }
+]
 
-  // const testObj = {
-  //   screenId: 0,
-  //   price: 12000,
-  //   totalSeat: 48,
-  //   emptySeat: 36,
-  //   occupiedSeat: 12
-  //   titleKor: '기생충',
-  //   titleEng: 'Parasite',
-  // }
-  // state = { countSeat: 0, totalPrice: 0 }
+export default class MovieSeatBooking extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.movie = React.createRef();
+    this.count = React.createRef();
+    this.total = React.createRef();
+
+    this.state = { movieData: [], selectedSeats: [], selectedMovieIndex: 0, selectedMoviePrice: 0, selectedCount: 0, selectedTotal: 0 }
+  }
+
+  componentDidMount() {
+    this.setState({ movieData: testMovieData });
+  }
+
+  // Event Listeners
+  onSelectedSeat = (seats) => {
+    this.setState({ selectedSeats: seats })
+    localStorage.setItem(`selectedSeat`, JSON.stringify(seats));
+  }
+
+  onSelectChange = (e) => {
+    console.log(e.target.selectedIndex);
+    this.setState({ selectedMovieIndex: e.target.selectedIndex });
+  }
 
   render() {
+    const optionsJSX = this.state.movieData.map(movie => {
+      return <option value={movie.ticketPrice} key={movie.screenId}>{movie.titleKor}({movie.titleEng}) [₩{movie.ticketPrice}]</option>
+    })
+
     return (
       <div className="movie__container">
 
         <div className="movie-selection">
           <label><span role="img" aria-labelledby="emoji">🎥</span>영화를 선택해주세요 </label>
-          <select>
-            <option value="12000">기생충(Parasite) [₩12000]</option>
-            <option value="10000">결혼 이야기(Marrige Story) [₩10000]</option>
-            <option value="9000">1917 [₩9000]</option>
-            <option value="7000">조커(Joker) [₩7000]</option>
+          <select ref={this.movie} onChange={this.onSelectChange}>
+            {optionsJSX.length > 0 ? optionsJSX : <option value="0">Loading...</option>}
           </select>
         </div>
 
@@ -49,14 +97,12 @@ export default class MovieSeatBooking extends React.Component {
         <div className="seats">
           <div className="screen"></div>
 
-          {/* seat component */}
-          <MovieSeat />
-
+          <MovieSeat seatStatus={this.state.movieData[this.state.selectedMovieIndex].length ? this.state.movieData[this.state.selectedMovieIndex] : defaultSeatStatus} onSelectedSeat={this.onSelectedSeat} />
         </div>
 
         <p className="text">
-          고객님이 선택한 좌석은 <span>0</span>개 이며,
-          총 가격은 ₩<span>0</span> 입니다.
+          고객님은 <span ref={this.count}>0</span>좌석을 선택하셨으며,
+          결제는 ₩<span ref={this.total}>0</span> 입니다.
         </p>
       </div>
     )

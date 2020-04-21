@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
-import FormValidator from '../images/form-validator.JPG';
 import ReactLogo from '../images/logo192.png';
+import FormValidator from '../images/form-validator.JPG';
+import CustomVideoPlayer from '../images/custom-video-player.JPG';
 
 const Home = () => {
   return (
@@ -14,17 +15,17 @@ const Home = () => {
       </header>
       <section className="projects">
         <div>
-          <img src={FormValidator} alt="Form-validator"></img>
+          <img src={FormValidator} alt="Form Validator"></img>
           <div className="content">
             <h4>Form Validation</h4>
-            <p>Using DOM & Events</p>
+            <p>DOM & Events</p>
             <Link className="btn btn-primary" to={{ pathname: '/form-validator' }} target="_blank">
               Go to project
             </Link>
           </div>
         </div>
         <div>
-          <img src={FormValidator} alt="Form-validator"></img>
+          <img src={FormValidator} alt="Movie Seat Booking"></img>
           <div className="content">
             <h4>Movie Seat Booking</h4>
             <p>DOM & CSS & Local Storage</p>
@@ -34,21 +35,21 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <img src={FormValidator} alt="Form-validator"></img>
+          <img src={CustomVideoPlayer} alt="Custom Video Player"></img>
           <div className="content">
             <h4>Custom Video Player</h4>
-            <p>Using DOM & Events</p>
+            <p>HTML5 Video API</p>
             <Link className="btn btn-primary" to={{ pathname: '/custom-video-player' }} target="_blank">
               Go to project
             </Link>
           </div>
         </div>
         <div>
-          <img src={FormValidator} alt="Form-validator"></img>
+          <img src={FormValidator} alt="Exchange Rate Calculator"></img>
           <div className="content">
-            <h4>Form Validation</h4>
-            <p>Using DOM & Events</p>
-            <Link className="btn btn-primary" to={{ pathname: '/form-validator' }}>
+            <h4>Exchange Rate Calculator</h4>
+            <p>Fetch & JSON</p>
+            <Link className="btn btn-primary" to={{ pathname: '/exchange-rate-calculator' }} target="_blank">
               Go to project
             </Link>
           </div>

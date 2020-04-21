@@ -1,0 +1,108 @@
+:root {
+  --primary-color: #5fbaa7;
+  --bg-color: #f4f4f4;
+  --select-boder-color: #dedede;
+}
+
+.exchange-wrapper {
+  background-color: var(--bg-color);
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.exchange-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.money-img {
+  width: 150px;
+  padding-bottom: 20px;
+}
+
+.exchange-container h1 {
+  color: var(--primary-color);
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.exchange-container p {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.currency-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.currency {
+  padding: 40px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.currency select {
+  padding: 10px 20px 10px 10px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid var(--select-boder-color);
+  font-size: 16px;
+  border-radius: 5px;
+  background: transparent;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%20000002%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-position: right 8px top 50%, 0, 0;
+  background-size: 12px auto, 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.currency input {
+  background: transparent;
+  border: 0;
+  text-align: right;
+  font-size: 30px;
+}
+
+.swap-rate-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.swap-rate-container button {
+  color: #fff;
+  background-color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 17px;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.swap-rate-container .rate {
+  padding: 0 10px;
+  color: var(--primary-color);
+  font-size: 16px;
+}
+
+.currency-container select:focus,
+.currency-container input:focus,
+.currency-container button:focus {
+  outline: 0;
+}
+
+@media (max-width: 600px) {
+  .currency input {
+    width: 200px;
+  }
+}

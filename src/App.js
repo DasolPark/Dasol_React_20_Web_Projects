@@ -7,6 +7,7 @@ import Home from './routes/Home';
 import FormValidator from './components/FormValidator/FormValidator';
 import MovieSeatBooking from './components/MovieSeatBooking/MovieSeatBooking';
 import CustomVideoPlayer from './components/CustomVideoPlayer/CustomVideoPlayer';
+import ExchangeRateCalculator from './components/ExchangeRateCalculator/ExchangeRateCalculator';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/form-validator" exact={true} component={FormValidator}></Route>
       <Route path="/movie-seat-booking" exact={true} component={MovieSeatBooking}></Route>
       <Route path="/custom-video-player" exact={true} component={CustomVideoPlayer}></Route>
+      <Route path="/exchange-rate-calculator" exact={true} component={ExchangeRateCalculator}></Route>
     </BrowserRouter>
   );
 };
