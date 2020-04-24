@@ -8,6 +8,7 @@ import FormValidator from './components/FormValidator/FormValidator';
 import MovieSeatBooking from './components/MovieSeatBooking/MovieSeatBooking';
 import CustomVideoPlayer from './components/CustomVideoPlayer/CustomVideoPlayer';
 import ExchangeRateCalculator from './components/ExchangeRateCalculator/ExchangeRateCalculator';
+import DOMArrayMethods from './components/DOMArrayMethods/DOMArrayMethods';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/movie-seat-booking" exact={true} component={MovieSeatBooking}></Route>
       <Route path="/custom-video-player" exact={true} component={CustomVideoPlayer}></Route>
       <Route path="/exchange-rate-calculator" exact={true} component={ExchangeRateCalculator}></Route>
+      <Route path="/dom-array-methods" exact={true} component={DOMArrayMethods}></Route>
     </BrowserRouter>
   );
 };

@@ -56,11 +56,11 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <img src={FormValidator} alt="Form-validator"></img>
+          <img src={FormValidator} alt="dom-array-methods"></img>
           <div className="content">
-            <h4>Form Validation</h4>
-            <p>Using DOM & Events</p>
-            <Link className="btn btn-primary" to={{ pathname: '/form-validator' }}>
+            <h4>DOM Array Methods</h4>
+            <p>DOM & forEach(), map(), filter(), etc</p>
+            <Link className="btn btn-primary" to={{ pathname: '/dom-array-methods' }} target="_blank">
               Go to project
             </Link>
           </div>
