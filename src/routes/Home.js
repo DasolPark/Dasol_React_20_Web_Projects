@@ -5,6 +5,7 @@ import './Home.css';
 import ReactLogo from '../images/logo192.png';
 import FormValidator from '../images/form-validator.JPG';
 import CustomVideoPlayer from '../images/custom-video-player.JPG';
+import ExchangeRateCalculator from '../images/exchange-rate-calculator.JPG';
 
 const Home = () => {
   return (
@@ -45,7 +46,7 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <img src={FormValidator} alt="Exchange Rate Calculator"></img>
+          <img src={ExchangeRateCalculator} alt="Exchange Rate Calculator"></img>
           <div className="content">
             <h4>Exchange Rate Calculator</h4>
             <p>Fetch & JSON</p>

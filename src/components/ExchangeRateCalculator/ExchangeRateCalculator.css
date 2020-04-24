@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
 :root {
   --primary-color: #5fbaa7;
   --bg-color: #f4f4f4;
@@ -7,6 +9,7 @@
 .exchange-wrapper {
   background-color: var(--bg-color);
   font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,6 +39,12 @@
 .exchange-container p {
   text-align: center;
   padding-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+.exchange-container .date {
+  font-weight: bold;
+  padding: 0;
 }
 
 .currency-container {
@@ -60,7 +69,7 @@
   border-radius: 5px;
   background: transparent;
   background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%20000002%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
-  background-position: right 8px top 50%, 0, 0;
+  background-position: right 6px top 50%, 0, 0;
   background-size: 12px auto, 100%;
   background-repeat: no-repeat;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
@@ -89,6 +98,10 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 
+.swap-rate-container button:active {
+  transform: scale(1.05);
+}
+
 .swap-rate-container .rate {
   padding: 0 10px;
   color: var(--primary-color);
@@ -99,6 +112,14 @@
 .currency-container input:focus,
 .currency-container button:focus {
   outline: 0;
+}
+
+.currency-container input:hover {
+  cursor: text;
+}
+
+.currency-container select:hover {
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
