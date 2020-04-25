@@ -13,6 +13,14 @@
   margin: 0;
 }
 
+.dom-array-method__container h1 {
+  margin-bottom: 10px;
+}
+
+.dom-array-method__container p {
+  font-weight: bold;
+}
+
 .dom-array-method__inner-container {
   display: flex;
   padding: 20px;
@@ -30,7 +38,9 @@
 .dom-array-method__inner-container aside button {
   cursor: pointer;
   background-color: #fff;
-  border: 1px solid #111;
+  /* border: 1px solid #111; */
+  border: 0;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   display: block;
   width: 100%;
@@ -38,6 +48,11 @@
   margin-bottom: 20px;
   font-weight: bold;
   font-size: 14px;
+  outline: none;
+}
+
+.dom-array-method__inner-container aside button:active {
+  transform: scale(0.98);
 }
 
 .dom-array-method__inner-container main {
