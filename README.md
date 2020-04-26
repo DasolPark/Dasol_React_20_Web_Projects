@@ -8,10 +8,10 @@
 |   #   |          Project           | Check |
 | :---: | :------------------------: | :---: |
 |  01   |       Form Validator       |  [x]  |
-|  02   |     Movie Seat Booking     |  [ ]  |
-|  03   |    Custom Video Player     |  [ ]  |
-|  04   |  Exchange Rate Calculator  |  [ ]  |
-|  05   | DOM Array Methods Project  |  [ ]  |
+|  02   |     Movie Seat Booking     |  [x]  |
+|  03   |    Custom Video Player     |  [x]  |
+|  04   |  Exchange Rate Calculator  |  [x]  |
+|  05   | DOM Array Methods Project  |  [x]  |
 |  06   |    Menu Slider & Modal     |  [ ]  |
 |  07   |        Hangman Game        |  [ ]  |
 |  08   |       Mealfinder App       |  [ ]  |

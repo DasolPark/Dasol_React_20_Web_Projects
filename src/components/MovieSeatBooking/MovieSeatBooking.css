@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+:root {
+  --movie-bg-color: #242333;
+  --movie-seat-color: #444451;
+  --movie-seat-selected-color: #6feaf6;
+  --movie-seat-occupied-color: #fff;
+}
+
+.movie__wrapper {
+  box-sizing: border-box;
+}
+
+.movie__container {
+  background-color: var(--movie-bg-color);
+  color: #fff;
+  font-family: 'Noto Sans KR', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie__movie-list {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie__movie-list select {
+  background-color: #fff;
+  border: 0;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  padding: 5px 15px 5px 15px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.movie__movie-list select:focus {
+  outline: 0;
+}
+
+.movie__seat-list {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #777;
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie__seat-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.movie__seat-list li small {
+  margin-left: 2px;
+}
+
+.movie__seat-list .seat:not(.occupied):hover {
+  cursor: default;
+  transform: scale(1);
+}
+
+.movie__seats {
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.movie__seats .screen {
+  background-color: #fff;
+  height: 90px;
+  width: 100%;
+  margin: 15px 0;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+.movie__seats .row {
+  display: flex;
+}
+
+.seat {
+  background-color: var(--movie-seat-color);
+  height: 15px;
+  width: 15px;
+  margin: 3px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.seat.selected {
+  background-color: var(--movie-seat-selected-color);
+}
+
+.seat.occupied {
+  background-color: var(--movie-seat-occupied-color);
+}
+
+.seat:nth-of-type(2) {
+  margin-right: 18px;
+}
+
+.seat:nth-last-of-type(2) {
+  margin-left: 18px;
+}
+
+.seat:not(.occupied):hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.movie__text {
+  margin: 5px 0;
+}
+
+.movie__text span {
+  color: var(--movie-seat-selected-color);
+}
+
+@media (max-width: 450px) {
+  .movie__movie-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .movie__movie-list label {
+    margin-bottom: 15px;
+  }
+}
