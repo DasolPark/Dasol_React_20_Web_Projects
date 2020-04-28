@@ -69,11 +69,11 @@ const Home = () => {
             </div>
           </div>
           <div>
-            <img src={FormValidator} alt="Form-validator"></img>
+            <img src={FormValidator} alt="menu-slider_and_modal"></img>
             <div className="content">
-              <h4>Form Validation</h4>
-              <p>Using DOM & Events</p>
-              <Link className="btn btn-primary" to={{ pathname: '/form-validator' }}>
+              <h4>Menu Slider And Modal</h4>
+              <p>DOM & CSS</p>
+              <Link className="btn btn-primary" to={{ pathname: '/menu-slider-modal' }}>
                 Go to project
             </Link>
             </div>

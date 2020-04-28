@@ -9,6 +9,7 @@ import MovieSeatBooking from './components/MovieSeatBooking/MovieSeatBooking';
 import CustomVideoPlayer from './components/CustomVideoPlayer/CustomVideoPlayer';
 import ExchangeRateCalculator from './components/ExchangeRateCalculator/ExchangeRateCalculator';
 import DOMArrayMethods from './components/DOMArrayMethods/DOMArrayMethods';
+import MenuSliderAndModal from './components/MenuSliderAndModal';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <Route path="/custom-video-player" exact={true} component={CustomVideoPlayer}></Route>
       <Route path="/exchange-rate-calculator" exact={true} component={ExchangeRateCalculator}></Route>
       <Route path="/dom-array-methods" exact={true} component={DOMArrayMethods}></Route>
+      <Route path="/menu-slider-modal" exact={true} component={MenuSliderAndModal}></Route>
     </BrowserRouter>
   );
 };
