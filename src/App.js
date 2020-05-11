@@ -9,7 +9,7 @@ import MovieSeatBooking from './components/MovieSeatBooking/MovieSeatBooking';
 import CustomVideoPlayer from './components/CustomVideoPlayer/CustomVideoPlayer';
 import ExchangeRateCalculator from './components/ExchangeRateCalculator/ExchangeRateCalculator';
 import DOMArrayMethods from './components/DOMArrayMethods/DOMArrayMethods';
-import MenuSliderAndModal from './components/MenuSliderAndModal';
+import MenuSliderAndModal from './components/MenuSliderAndModal/MenuSliderAndModal';
 
 const App = () => {
   return (

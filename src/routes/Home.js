@@ -73,7 +73,7 @@ const Home = () => {
             <div className="content">
               <h4>Menu Slider And Modal</h4>
               <p>DOM & CSS</p>
-              <Link className="btn btn-primary" to={{ pathname: '/menu-slider-modal' }}>
+              <Link className="btn btn-primary" to={{ pathname: '/menu-slider-modal' }} target="_blank">
                 Go to project
             </Link>
             </div>
