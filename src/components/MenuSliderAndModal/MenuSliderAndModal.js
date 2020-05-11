@@ -3,10 +3,36 @@ import React from 'react';
 import './MenuSliderAndModal.css';
 
 export default class MenuSliderAndModal extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.sliderBody = React.createRef();
+    this.modal = React.createRef();
+  }
+
+  onToggleClick = () => {
+    this.sliderBody.current.classList.toggle('show-nav');
+  }
+
+  onSignUpBtnClick = () => {
+    this.modal.current.classList.add('show-modal');
+  }
+
+  onCloseBtnClick = () => {
+    this.modal.current.classList.remove('show-modal');
+  }
+
+  onWindowClick = (e) => {
+    if (e.target === this.modal.current) {
+      this.modal.current.classList.remove('show-modal')
+    }
+  }
+
   render() {
     return (
-      <div className="menu-slider__wrapper">
-        <div className="menu-slider__container">
+      <div className="menu-slider__wrapper" onClick={this.onWindowClick}>
+        <div ref={this.sliderBody} className="menu-slider__container">
 
           <nav>
             <div className="logo">
@@ -21,14 +47,14 @@ export default class MenuSliderAndModal extends React.Component {
           </nav>
 
           <header>
-            <button className="toggle"><i className="fa fa-bars fa-2x"></i></button>
+            <button className="toggle" onClick={this.onToggleClick}><i className="fa fa-bars fa-2x"></i></button>
 
             <h1>My Landing Page</h1>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur, amet!
             </p>
 
-            <button className="open-btn">Sign Up</button>
+            <button className="open-btn" onClick={this.onSignUpBtnClick}>Sign Up</button>
           </header>
 
           <div className="container">
@@ -72,9 +98,9 @@ export default class MenuSliderAndModal extends React.Component {
             </p>
           </div>
 
-          <div className="modal-container">
+          <div ref={this.modal} className="modal-container">
             <div className="modal">
-              <button className="close-btn">
+              <button className="close-btn" onClick={this.onCloseBtnClick}>
                 <i className="fa fa-times"></i>
               </button>
               <div className="modal-header">
