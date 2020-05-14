@@ -1,0 +1,129 @@
+.hangman__container {
+  background-color: #34495e;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hangman__container h1 {
+  margin: 20px 0 0;
+}
+
+.hangman__container .game-container {
+  position: relative;
+  padding: 20px 30px;
+  margin: auto;
+  height: 350px;
+  width: 450px;
+}
+
+.game-container .figure-container {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 4px;
+  stroke-linecap: round;
+}
+
+.game-container .figure-part {
+  display: none;
+}
+
+.game-container .wrong-letters-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.game-container .wrong-letters-container p {
+  margin: 0 0 5px;
+}
+
+.game-container .wrong-letters-container span {
+  font-size: 24px;
+}
+
+.game-container .word {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.game-container .word .letter {
+  display: inline-flex;
+  border-bottom: 3px solid #2980b9;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3px;
+  height: 50px;
+  width: 20px;
+}
+
+.hangman__container .popup-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.hangman__container .popup {
+  background-color: #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+.hangman__container .popup button {
+  cursor: pointer;
+  background-color: #fff;
+  color: #2980b9;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.hangman__container .popup button:active {
+  transform: scale(0.98);
+}
+
+.hangman__container .popup button:focus {
+  outline: 0;
+}
+
+.hangman__container .notification-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 0 0;
+  padding: 15px;
+  position: fixed;
+  bottom: -50px;
+  transition: transform 0.3s ease-in;
+}
+
+.hangman__container .notification-container p {
+  margin: 0;
+}
+
+.hangman__container .notification-container.show {
+  transform: translateY(-50px);
+}

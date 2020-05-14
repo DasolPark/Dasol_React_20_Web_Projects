@@ -8,6 +8,8 @@ import MovieSeatBooking from '../images/movie-seat-booking.JPG';
 import CustomVideoPlayer from '../images/custom-video-player.JPG';
 import ExchangeRateCalculator from '../images/exchange-rate-calculator.JPG';
 import DOMArrayMethods from '../images/dom-array-methods.JPG';
+import MenuSliderAndModal from '../images/menu-slider-and-modal.JPG';
+import HangmanGame from '../images/hangman-game.JPG';
 
 const Home = () => {
   return (
@@ -69,7 +71,7 @@ const Home = () => {
             </div>
           </div>
           <div>
-            <img src={FormValidator} alt="menu-slider_and_modal"></img>
+            <img src={MenuSliderAndModal} alt="menu-slider_and_modal"></img>
             <div className="content">
               <h4>Menu Slider And Modal</h4>
               <p>DOM & CSS</p>
@@ -79,11 +81,11 @@ const Home = () => {
             </div>
           </div>
           <div>
-            <img src={FormValidator} alt="Form-validator"></img>
+            <img src={HangmanGame} alt="Hangman-Game"></img>
             <div className="content">
-              <h4>Form Validation</h4>
-              <p>Using DOM & Events</p>
-              <Link className="btn btn-primary" to={{ pathname: '/form-validator' }}>
+              <h4>Hangman Game</h4>
+              <p>DOM, SVG, Events</p>
+              <Link className="btn btn-primary" to={{ pathname: '/hangman-game' }} target="_blank">
                 Go to project
             </Link>
             </div>

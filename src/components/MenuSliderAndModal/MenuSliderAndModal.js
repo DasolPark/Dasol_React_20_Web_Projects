@@ -25,13 +25,19 @@ export default class MenuSliderAndModal extends React.Component {
 
   onWindowClick = (e) => {
     if (e.target === this.modal.current) {
-      this.modal.current.classList.remove('show-modal')
+      this.modal.current.classList.remove('show-modal');
+    }
+  }
+
+  onWindowKeyUp = (e) => {
+    if (e.keyCode === 27) {
+      this.modal.current.classList.remove('show-modal');
     }
   }
 
   render() {
     return (
-      <div className="menu-slider__wrapper" onClick={this.onWindowClick}>
+      <div className="menu-slider__wrapper" onClick={this.onWindowClick} onKeyUp={this.onWindowKeyUp}>
         <div ref={this.sliderBody} className="menu-slider__container">
 
           <nav>
