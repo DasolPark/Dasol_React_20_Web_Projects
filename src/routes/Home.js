@@ -91,11 +91,11 @@ const Home = () => {
             </div>
           </div>
           <div>
-            <img src={FormValidator} alt="Meal-Finder-App"></img>
+            <img src={FormValidator} alt="Food-Finder-App"></img>
             <div className="content">
-              <h4>Meal Finder App</h4>
+              <h4>Food Finder App</h4>
               <p>Fetch & MealDB API</p>
-              <Link className="btn btn-primary" to={{ pathname: '/meal-finder' }} target="_blank">
+              <Link className="btn btn-primary" to={{ pathname: '/food-finder' }} target="_blank">
                 Go to project
             </Link>
             </div>

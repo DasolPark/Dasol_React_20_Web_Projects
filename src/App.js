@@ -11,7 +11,7 @@ import ExchangeRateCalculator from './components/ExchangeRateCalculator/Exchange
 import DOMArrayMethods from './components/DOMArrayMethods/DOMArrayMethods';
 import MenuSliderAndModal from './components/MenuSliderAndModal/MenuSliderAndModal';
 import HangmanGame from './components/HangmanGame/HangmanGame';
-import MealFinderApp from './components/MealFinderApp/MealFinderApp';
+import FoodFinderApp from './components/FoodFinderApp/FoodFinderApp';
 
 const App = () => {
   return (
@@ -24,7 +24,7 @@ const App = () => {
       <Route path="/dom-array-methods" exact={true} component={DOMArrayMethods}></Route>
       <Route path="/menu-slider-modal" exact={true} component={MenuSliderAndModal}></Route>
       <Route path="/hangman-game" exact={true} component={HangmanGame}></Route>
-      <Route path="/meal-finder" exact={true} component={MealFinderApp}></Route>
+      <Route path="/food-finder" exact={true} component={FoodFinderApp}></Route>
     </BrowserRouter>
   );
 };

@@ -1,0 +1,47 @@
+.food-finder__wrapper {
+  background-color: #f1c40f;
+  color: #fff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  height: 100vh;
+}
+
+.food-finder__container {
+  margin: auto;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.food-finder__container h1 {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+@media (max-width: 800px) {
+  .food-finder__wrapper {
+    height: 100%;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .food-finder__wrapper {
+    height: 100%;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .food-finder__container input[type='search'] {
+    width: 100%;
+  }
+
+  .food-finder__wrapper {
+    height: 100%;
+    padding-bottom: 50px;
+  }
+}
