@@ -4,20 +4,23 @@ import FoodCard from './FoodCard';
 
 import './FoodsCard.css';
 
-const FoodsCard = ({ foods }) => {
-  console.log(foods);
-  return (
-    <div className="foods">
-      {foods.length > 0 ?
-        foods.map(food =>
-          <FoodCard
-            thumb={food.strMealThumb}
-            name={food.strMeal}
-            id={food.idMeal}
-            key={food.idMeal} />) : ''
-      }
-    </div>
-  )
-}
+export default class FoodsCard extends React.Component {
 
-export default FoodsCard
+  render() {
+    const { foods, onFoodClick } = this.props;
+
+    return (
+      <div className="foods" onClick={this.onFoodsClick}>
+        {foods.length > 0 ?
+          foods.map(food =>
+            <FoodCard
+              onFoodClick={onFoodClick}
+              thumb={food.strMealThumb}
+              name={food.strMeal}
+              id={food.idMeal}
+              key={food.idMeal} />) : ''
+        }
+      </div>
+    )
+  }
+}
