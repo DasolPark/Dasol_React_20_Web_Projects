@@ -6,13 +6,19 @@ export default class SingleFoodCard extends React.Component {
   constructor(props) {
     super(props);
 
-    this.ingredients = [];
+    this.state = { ingredients: [] };
+  }
+
+  componentDidMount() {
+    this.getIngredients();
   }
 
   getIngredients = () => {
+    const ingredients = [];
+
     for (let i = 1; i <= 20; i++) {
       if (this.props.singleFood[`strIngredient${i}`]) {
-        this.ingredients.push(
+        ingredients.push(
           `${this.props.singleFood[`strIngredient${i}`]} - ${this.props.singleFood[`strMeasure${i}`]}`
         )
       } else {
@@ -20,12 +26,11 @@ export default class SingleFoodCard extends React.Component {
       }
     }
 
-    console.log(this.ingredients);
+    this.setState({ ingredients });
   }
 
   render() {
     const { strMealThumb, strMeal, strCategory, strArea, strInstructions } = this.props.singleFood;
-    this.getIngredients();
 
     return (
       <div className="single-food">
@@ -39,7 +44,7 @@ export default class SingleFoodCard extends React.Component {
           <p>{strInstructions}</p>
           <h2>Ingredients</h2>
           <ul>
-            {this.ingredients.map((ing, index) => <li key={index}>{ing}</li>)}
+            {this.state.ingredients.map((ing, index) => <li key={index}>{ing}</li>)}
           </ul>
         </div>
       </div>

@@ -1,0 +1,41 @@
+.single-food {
+  margin: 30px auto;
+  width: 70%;
+}
+
+.single-food img {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+.single-food-info {
+  margin: 20px;
+  padding: 10px;
+  border: 2px dashed #e67e22;
+  border-radius: 5px;
+}
+
+.single-food p {
+  margin: 0;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+.single-food ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.single-food ul li {
+  border: 1px solid #ededed;
+  border-radius: 5px;
+  background-color: #fff;
+  display: inline-block;
+  color: #2d2013;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 5px;
+  margin: 0 5px 5px 0;
+}

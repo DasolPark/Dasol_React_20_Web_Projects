@@ -42,7 +42,6 @@ export default class FoodFinderApp extends React.Component {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
       .then(res => res.json())
       .then(data => {
-        console.log(data.meals[0]);
         this.setState({ singleFood: data.meals[0] })
       })
   }
