@@ -10,6 +10,7 @@ import ExchangeRateCalculator from '../images/exchange-rate-calculator.JPG';
 import DOMArrayMethods from '../images/dom-array-methods.JPG';
 import MenuSliderAndModal from '../images/menu-slider-and-modal.JPG';
 import HangmanGame from '../images/hangman-game.JPG';
+import FoodFinder from '../images/food-finder.JPG';
 
 const Home = () => {
   return (
@@ -91,7 +92,7 @@ const Home = () => {
             </div>
           </div>
           <div>
-            <img src={FormValidator} alt="Food-Finder-App"></img>
+            <img src={FoodFinder} alt="Food-Finder-App"></img>
             <div className="content">
               <h4>Food Finder App</h4>
               <p>Fetch & MealDB API</p>

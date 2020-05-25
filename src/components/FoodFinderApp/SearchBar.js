@@ -9,6 +9,7 @@ export default class SearchBar extends React.Component {
     e.preventDefault();
 
     this.props.onSubmit(this.state.term);
+    this.setState({ term: '' });
   }
 
   render() {
@@ -25,7 +26,7 @@ export default class SearchBar extends React.Component {
             <i className="fas fa-search"></i>
           </button>
         </form>
-        <button className="random-btn">
+        <button className="random-btn" onClick={this.props.onRandomSubmit}>
           <i className="fas fa-random"></i>
         </button>
       </div>

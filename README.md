@@ -14,7 +14,7 @@
 |  05   | DOM Array Methods Project  |  [x]  |
 |  06   |    Menu Slider & Modal     |  [x]  |
 |  07   |        Hangman Game        |  [x]  |
-|  08   |       Mealfinder App       |  [ ]  |
+|  08   |       Mealfinder App       |  [x]  |
 |  09   |      Expense Tracker       |  [ ]  |
 |  10   |        Music Player        |  [ ]  |
 |  11   |     Infinite Scrolling     |  [ ]  |

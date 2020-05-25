@@ -3,7 +3,7 @@
   color: #fff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin: 0;
-  height: 100vh;
+  min-height: 100vh; /* 새로운 element가 들어오면 height범위가 늘어나도록 */
 }
 
 .food-finder__container {
@@ -21,27 +21,21 @@
   padding-top: 20px;
 }
 
+/* media query는 각 Component의 해당된 CSS에서만 작동한다 */
 @media (max-width: 800px) {
   .food-finder__wrapper {
-    height: 100%;
     padding-bottom: 50px;
   }
 }
 
 @media (max-width: 700px) {
   .food-finder__wrapper {
-    height: 100%;
     padding-bottom: 50px;
   }
 }
 
 @media (max-width: 500px) {
-  .food-finder__container input[type='search'] {
-    width: 100%;
-  }
-
   .food-finder__wrapper {
-    height: 100%;
     padding-bottom: 50px;
   }
 }
