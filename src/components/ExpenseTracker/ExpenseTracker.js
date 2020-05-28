@@ -1,8 +1,31 @@
 import React from 'react';
 
 import './ExpenseTracker.css';
+import ExpenseList from './ExpenseList';
 
 export default class ExpenseTracker extends React.Component {
+  constructor(props) {
+    super(props);
+
+    const dummyTransaction = [
+      { id: 1, text: '월급', amount: 5000000 },
+      { id: 2, text: '통신비', amount: -30000 },
+      { id: 3, text: '교통비', amount: -100000 }
+    ]
+
+    this.transactions = dummyTransaction;
+
+    this.state = { transactions: [] };
+  }
+
+  componentDidMount() {
+    this.setState({ transactions: this.transactions });
+  }
+
+  formatMoney(money) {
+    return new Intl.NumberFormat('ko-KR', { style: 'currency', currency: 'KRW' }).format(money);
+  }
+
   render() {
     return (
       <div className="expense-tracker__wrapper">
@@ -24,10 +47,7 @@ export default class ExpenseTracker extends React.Component {
           </div>
 
           <h3>수입/지출 내용</h3>
-          <ul className="list">
-            <li className="plus">월급 <span>+₩3,000,000</span><button className="delete-btn"><span role="img" aria-labelledby="emoji">⛔</span></button></li>
-            <li className="minus">아이스크림 <span>-₩3,000</span><button className="delete-btn"><span role="img" aria-labelledby="emoji">⛔</span></button></li>
-          </ul>
+          <ExpenseList transactions={this.state.transactions} formatMoney={this.formatMoney} />
 
           <h3>수입/지출 추가</h3>
           <form className="form">
