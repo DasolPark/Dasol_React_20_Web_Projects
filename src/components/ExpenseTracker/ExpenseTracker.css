@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --background-color: #f7f7f7;
+  --btn-background-color: #9c88ff;
+  --btn-delete-back-color: #e74c3c;
+  --line-color: #bbb;
+  --plus-color: #2ecc71;
+  --minus-color: #c0392b;
+  --list-font-color: #333;
+}
+
+.expense-tracker__wrapper {
+  font-family: 'Noto Sans KR', 'sans-serif';
+  background-color: var(--background-color);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.expense-tracker__container {
+  margin: 30px auto;
+  width: 350px;
+}
+
+.expense-tracker__container h1 {
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.expense-tracker__container h3 {
+  border-bottom: 1px solid var(--line-color);
+  margin: 40px 0 10px;
+  padding-bottom: 10px;
+}
+
+.expense-tracker__container h4 {
+  margin: 0;
+}
+
+.expense-tracker__container .inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.expense-tracker__container .inc-exp-container > div {
+  flex: 1px;
+  text-align: center;
+}
+
+.expense-tracker__container .inc-exp-container > div:first-of-type {
+  border-right: 1px solid var(--line-color);
+}
+
+.expense-tracker__container .money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.expense-tracker__container .money.plus {
+  color: var(--plus-color);
+}
+
+.expense-tracker__container .money.minus {
+  color: var(--minus-color);
+}
+
+.expense-tracker__container .list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.expense-tracker__container .list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: var(--list-font-color);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.expense-tracker__container .list li.plus {
+  border-right: 5px solid var(--plus-color);
+}
+
+.expense-tracker__container .list li.minus {
+  border-right: 5px solid var(--minus-color);
+}
+
+.expense-tracker__container .list li .delete-btn {
+  cursor: pointer;
+  position: absolute;
+  border: 0;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  background-color: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.expense-tracker__container .list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.expense-tracker__container label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.expense-tracker__container input[type='text'],
+.expense-tracker__container input[type='number'] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.expense-tracker__container .btn {
+  cursor: pointer;
+  background-color: var(--btn-background-color);
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 1rem;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+.expense-tracker__container .btn:focus,
+.expense-tracker__container .delete-btn:focus {
+  outline: 0;
+}

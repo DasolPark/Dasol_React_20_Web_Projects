@@ -12,6 +12,7 @@ import DOMArrayMethods from './components/DOMArrayMethods/DOMArrayMethods';
 import MenuSliderAndModal from './components/MenuSliderAndModal/MenuSliderAndModal';
 import HangmanGame from './components/HangmanGame/HangmanGame';
 import FoodFinderApp from './components/FoodFinderApp/FoodFinderApp';
+import ExpenseTracker from './components/ExpenseTracker/ExpenseTracker';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <Route path="/menu-slider-modal" exact={true} component={MenuSliderAndModal}></Route>
       <Route path="/hangman-game" exact={true} component={HangmanGame}></Route>
       <Route path="/food-finder" exact={true} component={FoodFinderApp}></Route>
+      <Route path="/expense-tracker" exact={true} component={ExpenseTracker}></Route>
     </BrowserRouter>
   );
 };
