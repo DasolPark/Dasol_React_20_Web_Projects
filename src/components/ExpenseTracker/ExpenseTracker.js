@@ -4,6 +4,7 @@ import ExpenseList from './ExpenseList';
 
 import './ExpenseTracker.css';
 import ExpenseStatus from './ExpenseStatus';
+import ExpenseFormCard from './ExpenseFormCard';
 
 const dummyTransaction = [
   { id: 1, text: '월급', amount: 5000000 },
@@ -22,15 +23,16 @@ export default class ExpenseTracker extends React.Component {
 
   componentDidMount() {
     this.setState({ transactions: this.transactions });
+    this.updateValues(this.transactions);
   }
 
   formatMoney(money) {
     return new Intl.NumberFormat('kr-KR', { style: 'currency', currency: 'KRW' }).format(money);
   }
 
-  updateValues = () => {
-    const amounts = this.transactions.length < 0 ? [] :
-      this.state.transactions.map(transaction =>
+  updateValues = (transactions) => {
+    const amounts = transactions.length === 0 ? [] :
+      transactions.map(transaction =>
         transaction.amount
       )
 
@@ -47,6 +49,24 @@ export default class ExpenseTracker extends React.Component {
     this.setState({ total, income, expense });
   }
 
+  generateID = () => {
+    return Math.floor(Math.random() * 10000000);
+  }
+
+  onTransactionSubmit = (text, amount) => {
+    const transactions = this.state.transactions;
+
+    const transaction = {
+      id: this.generateID(),
+      text, amount
+    }
+
+    transactions.push(transaction);
+
+    this.setState({ transactions });
+    this.updateValues(transactions);
+  }
+
   render() {
     const { transactions, total, income, expense } = this.state;
 
@@ -59,18 +79,7 @@ export default class ExpenseTracker extends React.Component {
 
           <ExpenseList transactions={transactions} formatMoney={this.formatMoney} />
 
-          <h3>수입/지출 추가</h3>
-          <form className="form">
-            <div className="form-control">
-              <label htmlFor="text">항목</label>
-              <input type="text" id="text" placeholder="항목을 입력해주세요😋" autoComplete="off" />
-            </div>
-            <div className="form-control">
-              <label htmlFor="amount">금액</label>
-              <input type="number" id="amount" placeholder="금액을 입력해주세요😘" autoComplete="off" />
-            </div>
-            <button className="btn">추가</button>
-          </form>
+          <ExpenseFormCard onTransactionSubmit={this.onTransactionSubmit} />
         </div>
       </div>
     )

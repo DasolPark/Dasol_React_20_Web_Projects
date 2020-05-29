@@ -3,7 +3,8 @@ import React from 'react';
 import './ExpenseStatus.css';
 
 const ExpenseStatus = ({ total, income, expense, formatMoney }) => {
-  console.log(income);
+  // console.log('income', income);
+  // console.log('expense', expense);
 
   return (
     <>

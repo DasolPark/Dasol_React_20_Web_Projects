@@ -1,0 +1,27 @@
+.expense-tracker__container label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.expense-tracker__container input[type='text'],
+.expense-tracker__container input[type='number'] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.expense-tracker__container .btn {
+  cursor: pointer;
+  background-color: var(--btn-background-color);
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 1rem;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
