@@ -1,0 +1,40 @@
+.expense-tracker__container .list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.expense-tracker__container .list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: var(--list-font-color);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.expense-tracker__container .list li.plus {
+  border-right: 5px solid var(--plus-color);
+}
+
+.expense-tracker__container .list li.minus {
+  border-right: 5px solid var(--minus-color);
+}
+
+.expense-tracker__container .list li .delete-btn {
+  cursor: pointer;
+  position: absolute;
+  border: 0;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  background-color: transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.expense-tracker__container .list li:hover .delete-btn {
+  opacity: 1;
+}

@@ -1,0 +1,31 @@
+.expense-tracker__container .inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.expense-tracker__container .inc-exp-container > div {
+  flex: 1px;
+  text-align: center;
+}
+
+.expense-tracker__container .inc-exp-container > div:first-of-type {
+  border-right: 1px solid var(--line-color);
+}
+
+.expense-tracker__container .money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.expense-tracker__container .money.plus {
+  color: var(--plus-color);
+}
+
+.expense-tracker__container .money.minus {
+  color: var(--minus-color);
+}
