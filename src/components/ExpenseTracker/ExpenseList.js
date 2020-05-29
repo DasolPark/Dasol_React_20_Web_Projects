@@ -3,7 +3,7 @@ import React from 'react';
 import './ExpenseList.css';
 
 const ExpenseList = (props) => {
-  const { transactions, formatMoney } = props;
+  const { transactions, formatMoney, removeTransaction } = props;
 
   return (
     <>
@@ -14,7 +14,9 @@ const ExpenseList = (props) => {
           transactions.map(transaction =>
             <li className={transaction.amount < 0 ? 'minus' : 'plus'} key={transaction.id}>
               {transaction.text} <span>{transaction.amount < 0 ? '- ' : '+ '}{formatMoney(Math.abs(transaction.amount))}</span>
-              <button className="delete-btn"><span role="img" aria-labelledby="emoji">⛔</span></button>
+              <button className="delete-btn" onClick={() => removeTransaction(transaction.id)}>
+                <span role="img" aria-labelledby="emoji">⛔</span>
+              </button>
             </li>
           )
         }

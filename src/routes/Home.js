@@ -11,6 +11,7 @@ import DOMArrayMethods from '../images/dom-array-methods.JPG';
 import MenuSliderAndModal from '../images/menu-slider-and-modal.JPG';
 import HangmanGame from '../images/hangman-game.JPG';
 import FoodFinder from '../images/food-finder.JPG';
+import ExpenseTracker from '../images/expense-tracker.JPG';
 
 const Home = () => {
   return (
@@ -102,7 +103,7 @@ const Home = () => {
             </div>
           </div>
           <div>
-            <img src={FormValidator} alt="Expense-Tracker"></img>
+            <img src={ExpenseTracker} alt="Expense-Tracker"></img>
             <div className="content">
               <h4>Expense Tracker</h4>
               <p>Array Methods & Local Storage</p>

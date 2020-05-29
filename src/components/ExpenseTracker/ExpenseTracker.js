@@ -6,24 +6,20 @@ import './ExpenseTracker.css';
 import ExpenseStatus from './ExpenseStatus';
 import ExpenseFormCard from './ExpenseFormCard';
 
-const dummyTransaction = [
-  { id: 1, text: '월급', amount: 5000000 },
-  { id: 2, text: '통신비', amount: -30000 },
-  { id: 3, text: '교통비', amount: -100000 }
-]
-
 export default class ExpenseTracker extends React.Component {
   constructor(props) {
     super(props);
-
-    this.transactions = dummyTransaction;
 
     this.state = { transactions: [], total: 0, income: 0, expense: 0 };
   }
 
   componentDidMount() {
-    this.setState({ transactions: this.transactions });
-    this.updateValues(this.transactions);
+    const localStorageTransactions = JSON.parse(localStorage.getItem('transactions'));
+
+    let transactions = localStorage.getItem('transactions') !== null ? localStorageTransactions : [];
+
+    this.setState({ transactions });
+    this.updateValues(transactions);
   }
 
   formatMoney(money) {
@@ -63,6 +59,17 @@ export default class ExpenseTracker extends React.Component {
 
     transactions.push(transaction);
 
+    localStorage.setItem('transactions', JSON.stringify(transactions));
+
+    this.setState({ transactions });
+    this.updateValues(transactions);
+  }
+
+  removeTransaction = (id) => {
+    let transactions = this.state.transactions;
+
+    transactions = transactions.filter(transaction => transaction.id !== id);
+
     this.setState({ transactions });
     this.updateValues(transactions);
   }
@@ -77,7 +84,7 @@ export default class ExpenseTracker extends React.Component {
         <div className="expense-tracker__container">
           <ExpenseStatus total={total} income={income} expense={expense} formatMoney={this.formatMoney} />
 
-          <ExpenseList transactions={transactions} formatMoney={this.formatMoney} />
+          <ExpenseList transactions={transactions} formatMoney={this.formatMoney} removeTransaction={this.removeTransaction} />
 
           <ExpenseFormCard onTransactionSubmit={this.onTransactionSubmit} />
         </div>
