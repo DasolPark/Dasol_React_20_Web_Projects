@@ -7,7 +7,7 @@ const ExpenseList = (props) => {
 
   return (
     <>
-      <h3>수입/지출 내용</h3>
+      <h3>수입/지출 내용<span role="img" aria-labelledby="emoji">🔎</span></h3>
 
       <ul className="list">
         {

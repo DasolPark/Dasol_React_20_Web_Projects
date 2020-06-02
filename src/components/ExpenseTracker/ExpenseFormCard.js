@@ -27,15 +27,15 @@ export default class ExpenseFormCard extends React.Component {
   render() {
     return (
       <>
-        <h3>수입/지출 추가</h3>
+        <h3>수입/지출 추가<span role="img" aria-labelledby="emoji">📝</span></h3>
         <form className="form" onSubmit={this.onFormSubmit}>
           <div className="form-control">
             <label htmlFor="text">항목</label>
-            <input type="text" ref={this.text} placeholder="항목을 입력해주세요😋" autoComplete="off" />
+            <input type="text" ref={this.text} placeholder="항목을 입력해주세요 :)" autoComplete="off" />
           </div>
           <div className="form-control">
             <label htmlFor="amount">금액</label>
-            <input type="number" ref={this.amount} placeholder="금액을 입력해주세요😘" autoComplete="off" />
+            <input type="number" ref={this.amount} placeholder="금액을 입력해주세요 ;)" autoComplete="off" />
           </div>
           <button className="btn">추가</button>
         </form>
