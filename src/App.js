@@ -13,6 +13,7 @@ import MenuSliderAndModal from './components/MenuSliderAndModal/MenuSliderAndMod
 import HangmanGame from './components/HangmanGame/HangmanGame';
 import FoodFinderApp from './components/FoodFinderApp/FoodFinderApp';
 import ExpenseTracker from './components/ExpenseTracker/ExpenseTracker';
+import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
       <Route path="/hangman-game" exact={true} component={HangmanGame}></Route>
       <Route path="/food-finder" exact={true} component={FoodFinderApp}></Route>
       <Route path="/expense-tracker" exact={true} component={ExpenseTracker}></Route>
+      <Route path="/music-player" exact={true} component={MusicPlayer}></Route>
     </BrowserRouter>
   );
 };

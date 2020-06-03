@@ -115,9 +115,9 @@ const Home = () => {
           <div>
             <img src={FormValidator} alt="Form-validator"></img>
             <div className="content">
-              <h4>Form Validation</h4>
-              <p>Using DOM & Events</p>
-              <Link className="btn btn-primary" to={{ pathname: '/form-validator' }}>
+              <h4>Music Player</h4>
+              <p>HTML5 Audio API</p>
+              <Link className="btn btn-primary" to={{ pathname: '/music-player' }} target="_blank">
                 Go to project
             </Link>
             </div>
