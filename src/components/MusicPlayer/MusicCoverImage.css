@@ -1,0 +1,43 @@
+.music-container .img-container {
+  position: relative;
+  width: 110px;
+  z-index: 1;
+}
+
+.music-container .img-container::after {
+  content: '';
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translate(-50%, 50%);
+}
+
+.music-container .img-container img {
+  position: absolute;
+  width: inherit;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  left: 0;
+  bottom: 0;
+  animation: rotate 3s linear infinite;
+
+  animation-play-state: paused;
+}
+
+.music-container.play .img-container img {
+  animation-play-state: running;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

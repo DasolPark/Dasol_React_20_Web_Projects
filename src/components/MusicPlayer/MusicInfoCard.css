@@ -1,0 +1,39 @@
+.music-container .music-info {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: calc(100% - 40px);
+  border-radius: 15px 15px 0 0;
+  padding: 10px 10px 10px 150px;
+  opacity: 0;
+  transform: translateY(0%);
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  z-index: 0;
+}
+
+.music-container.play .music-info {
+  opacity: 1;
+  transform: translateY(-100%);
+}
+
+.music-container .music-info h4 {
+  margin: 0;
+}
+
+.music-container .progress-container {
+  height: 4px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.music-container .progress-container .progress {
+  height: inherit;
+  width: 0%;
+  border-radius: inherit;
+  background-color: #fe8daa;
+  transition: width 0.1s linear;
+}
