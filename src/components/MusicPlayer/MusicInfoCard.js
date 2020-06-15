@@ -2,10 +2,10 @@ import React from 'react';
 
 import './MusicInfoCard.css';
 
-const MusicInfoCard = () => {
+const MusicInfoCard = ({ title }) => {
   return (
     <div className="music-info">
-      <h4>ukulele</h4>
+      <h4>{title}</h4>
       <div className="progress-container">
         <div className="progress"></div>
       </div>
